@@ -43,15 +43,7 @@ jobs:
         run: npm ci
         working-directory: ${{ steps.where.outputs.workdir }}
 
-      - name: Detect repo name
-        id: repo
-        run: |
-          REPO_NAME="${GITHUB_REPOSITORY##*/}"
-          echo "name=$REPO_NAME" >> "$GITHUB_OUTPUT"
-
       - name: Build
-        env:
-          VITE_BASE_PATH: /${{ steps.repo.outputs.name }}/
         run: |
           npm run build
         working-directory: ${{ steps.where.outputs.workdir }}
@@ -75,5 +67,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-
