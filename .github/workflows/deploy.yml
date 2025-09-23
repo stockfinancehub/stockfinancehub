@@ -56,6 +56,10 @@ jobs:
           npm run build
         working-directory: ${{ steps.where.outputs.workdir }}
 
+      - name: Copy 404.html for SPA fallback
+        run: |
+          cp ${{ steps.where.outputs.workdir }}/dist/index.html ${{ steps.where.outputs.workdir }}/dist/404.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
