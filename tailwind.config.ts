@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -13,6 +18,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Inter", "Source Sans 3", "system-ui", "sans-serif"],
+        display: ["Inter", "Source Sans 3", "system-ui", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,106 +66,56 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Extended Finance Colors
-        'forest': "hsl(var(--forest-green))",
-        'navy': "hsl(var(--deep-navy))",
-        'burgundy': "hsl(var(--warm-burgundy))",
-        'gold': "hsl(var(--elegant-gold))",
-        'cream': "hsl(var(--soft-cream))",
-        'warm-gray': "hsl(var(--warm-gray))",
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "gradient-hero": "var(--gradient-hero)",
-        "gradient-section": "var(--gradient-section)",
-        "gradient-card": "var(--gradient-card)",
-      },
-      boxShadow: {
-        card: "var(--shadow-card)",
-        hero: "var(--shadow-hero)",
-        elevated: "var(--shadow-elevated)",
-        'soft': '0 2px 8px -2px rgba(0, 0, 0, 0.1)',
-        'medium': '0 4px 16px -4px rgba(0, 0, 0, 0.12)',
-        'large': '0 8px 32px -8px rgba(0, 0, 0, 0.15)',
-      },
-      fontFamily: {
-        heading: ['Playfair Display', 'serif'],
-        body: ['Inter', 'sans-serif'],
+        finance: {
+          charcoal: "hsl(var(--finance-charcoal))",
+          "charcoal-light": "hsl(var(--finance-charcoal-light))",
+          teal: "hsl(var(--finance-teal))",
+          "teal-hover": "hsl(var(--finance-teal-hover))",
+          "teal-light": "hsl(var(--finance-teal-light))",
+          grey: "hsl(var(--finance-grey))",
+          "light-grey": "hsl(var(--finance-light-grey))",
+          border: "hsl(var(--finance-border))",
+          success: "hsl(var(--finance-success))",
+          error: "hsl(var(--finance-error))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        card: "var(--shadow-card)",
+        finance: "0 2px 8px -2px hsl(210 22% 16% / 0.06)",
+      },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
         "fade-in": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(30px)"
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)"
-          }
+          from: { opacity: "0" },
+          to: { opacity: "1" },
         },
-        "slide-in-left": {
-          "0%": {
-            opacity: "0",
-            transform: "translateX(-30px)"
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateX(0)"
-          }
-        },
-        "slide-in-right": {
-          "0%": {
-            opacity: "0",
-            transform: "translateX(30px)"
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateX(0)"
-          }
+        "slide-up": {
+          from: { opacity: "0", transform: "translateY(20px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
         "scale-in": {
-          "0%": {
-            opacity: "0",
-            transform: "scale(0.95)"
-          },
-          "100%": {
-            opacity: "1",
-            transform: "scale(1)"
-          }
-        }
+          from: { opacity: "0", transform: "scale(0.95)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.6s ease-out",
-        "slide-in-left": "slide-in-left 0.6s ease-out",
-        "slide-in-right": "slide-in-right 0.6s ease-out",
-        "scale-in": "scale-in 0.5s ease-out",
-        "fade-in-delay": "fade-in 0.6s ease-out 0.2s both",
-        "slide-in-left-delay": "slide-in-left 0.6s ease-out 0.4s both",
-        "slide-in-right-delay": "slide-in-right 0.6s ease-out 0.6s both",
+        "fade-in": "fade-in 0.6s ease-out forwards",
+        "slide-up": "slide-up 0.6s ease-out forwards",
+        "scale-in": "scale-in 0.4s ease-out forwards",
       },
     },
   },

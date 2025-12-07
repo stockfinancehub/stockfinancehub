@@ -1,19 +1,17 @@
 import Header from "@/components/Header";
-import AboutSection from "@/components/AboutSection";
-import FounderSection from "@/components/FounderSection";
+import PricingSection from "@/components/PricingSection";
 import Footer from "@/components/Footer";
 
-const About = () => {
+const Pricing = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        <AboutSection />
-        <FounderSection />
+        <PricingSection />
       </main>
       <Footer />
     </div>
   );
 };
 
-export default About;
+export default Pricing;

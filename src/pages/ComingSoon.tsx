@@ -1,19 +1,17 @@
 import Header from "@/components/Header";
-import AboutSection from "@/components/AboutSection";
-import FounderSection from "@/components/FounderSection";
+import ComingSoonSection from "@/components/ComingSoonSection";
 import Footer from "@/components/Footer";
 
-const About = () => {
+const ComingSoon = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        <AboutSection />
-        <FounderSection />
+        <ComingSoonSection />
       </main>
       <Footer />
     </div>
   );
 };
 
-export default About;
+export default ComingSoon;

@@ -9,9 +9,9 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
-  // Set base for GitHub Pages when provided via env (e.g., CI)
-  base: process.env.VITE_BASE_PATH || "/",
+  plugins: [react(), mode === "development" && componentTagger()].filter(
+    Boolean
+  ),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
